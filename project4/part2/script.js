@@ -43,3 +43,19 @@ function updateDisplayedImage(enter) {
     displayedImage.src = enter.target.src;
     displayedImage.alt = enter.target.alt;
 }
+
+// Darken and lighten button
+
+// Click event
+btn.addEventListener("click", () => {
+    if (btn.classList.contains("dark")) {
+        btn.textContent = "Lighten";
+        overlay.style.backgroundColor = "rgb(0 0 0 / 0.5)";
+    } else {
+        btn.textContent = "Darken";
+        overlay.style.backgroundColor = "rgb(0 0 0 / 0)";
+    }
+
+    // Toggle class for next press of button
+    btn.classList.toggle("dark");
+});
