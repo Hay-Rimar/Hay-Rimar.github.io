@@ -5,8 +5,8 @@ const generateBtn = document.querySelector(".generate");
 const story = document.querySelector(".story");
 
 function randomValueFromArray(array) {
-  const random = Math.floor(Math.random() * array.length);
-  return array[random];
+    const random = Math.floor(Math.random() * array.length);
+    return array[random];
 }
 
 // Raw text strings
@@ -32,7 +32,7 @@ function returnRandomStoryString() {
         ${randomEvent}. Bob saw the whole thing, but was not surprised — 
         ${randomCharacter} weighs 300 pounds, and it was a hot day.`;
 
-  return storyText;
+    return storyText;
 }
 
 // Event listener and partial generate function definition
@@ -42,20 +42,20 @@ generateBtn.addEventListener("click", generateStory);
 function generateStory() {
     let newStory = returnRandomStoryString();
     
-  if (customName.value !== "") {
-    const name = customName.value;
-    newStory = newStory.replace("Bob", name);
-  }
+    if (customName.value !== "") {
+        const name = customName.value;
+        newStory = newStory.replace("Bob", name);
+    }
 
-  if (document.getElementById("uk").checked) {
-    const weight = `${Math.round(300 / 14)} stone`;
-    const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
+    if (document.getElementById("uk").checked) {
+        const weight = `${Math.round(300 / 14)} stone`;
+        const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
 
-    newStory = newStory.replace("300 pounds", weight);
-    newStory = newStory.replace("94 Fahrenhit", temperature);
-  }
+        newStory = newStory.replace("300 pounds", weight);
+        newStory = newStory.replace("94 Fahrenhit", temperature);
+    }
 
-  // TODO: replace "" with the correct expression
-  story.textContent = "";
-  story.style.visibility = "visible";
+    // TODO: replace "" with the correct expression
+    story.textContent = newStory;
+    story.style.visibility = "visible";
 }
