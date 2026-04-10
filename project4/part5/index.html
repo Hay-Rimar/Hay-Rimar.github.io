@@ -26,6 +26,9 @@ The challenge for structuring a feedback form
         to win prizes.
     </p>
 
+    <img src="https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg"
+        alt="">
+
     <form>
         <div class="form-section">
 
@@ -127,38 +130,63 @@ The challenge for structuring a feedback form
             </fieldset>
         </div>
 
-            About your hosts
+        <div class="form-section">
 
-            Who's your favorite bear?
-            Papa bear
-            Mama bear
-            Junior
-            Dozer
+           <h2>About your hosts</h2>
 
-            Which greeting did you prefer?
-            Wave
-            Friendly greeting
-            Growl
-            Claw marks in the door
+           <div class="separator">
+                <label for="favorite">Who's your favorite bear?</label>
+                <select name="favorite" if="favorite">
+                    <option value="papa">Papa bear</option>
+                    <option value="mama">Mama bear</option>
+                    <option value="junior">Junior</option>
+                    <option value="dozer">Dozer</option>
+                </select>
+           </div>
 
-            --
+           <div class="separator">
+                <label for="greeting">Which greeting did you prefer?</label>
+                <select name="greeting" id="greeting">
+                    <option value="wave">Wave</option>
+                    <option value="friendly">Friendly greeting</option>
+                    <option value="growl">Growl</option>
+                    <option value="claw">Claw marks in the door</option>
+                </select>
+           </div>
+        </div>
 
-            Any other feedback?
+        <div class="form-section">
 
-            Give us your comments
+            <h2>Any other feedback?</h2>
 
-            --
+            <label for="comments">Give us your comments</label>
+            <br>
+            <textarea id="comments" name="comments"></textarea>
+        </div>
 
-            Your details
+        <div class="form-section">
 
-            Name
-            Email
-            Phone
+            <h2>Your details</h2>
 
-            --
+            <div class="separator">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
 
-            Submit
+            <div class="separator">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
 
-            --
+            <div class="separator">
+                <label for="phone">Phone</label>
+                <input type="phone" id="phone" name="phone">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <button>Submit</button>
+        </div>
+    </form>
   </body>
 </html>
