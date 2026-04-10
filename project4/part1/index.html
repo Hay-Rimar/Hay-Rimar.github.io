@@ -7,26 +7,30 @@ The html for a silly story generator
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Silly Story Generator</title>
-        <script src="script.js"></script>
-    </head>
-        
+<head>
+    <meta charset="utf-8">
+    <title>Silly Story Generator</title>
+</head>
+<body>    
     <div>
-    <label for="custom-name">Enter custom name:</label>
-    <input id="custom-name" type="text" placeholder="">
+        <label for="custom-name">Enter custom name:</label>
+        <input id="custom-name" type="text" placeholder="">
     </div>
+
     <fieldset>
-    <legend>Choose locale:</legend>
-    <label for="us">US</label
-    ><input id="us" type="radio" name="uk-us" value="us" checked>
-    <label for="uk">UK</label
-    ><input id="uk" type="radio" name="uk-us" value="uk">
+        <legend>Choose locale:</legend>
+        <label for="us">US</label>
+        <input id="us" type="radio" name="uk-us" value="us" checked>
+        <label for="uk">UK</label>
+        <input id="uk" type="radio" name="uk-us" value="uk">
     </fieldset>
+    
     <div>
-    <button class="generate">Generate random story</button>
+        <button class="generate">Generate random story</button>
     </div>
-    <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+        
     <p class="story"></p>
+
+    <script src="script.js"></script>
+</body>
 </html>
