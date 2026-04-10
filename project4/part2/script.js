@@ -13,3 +13,33 @@ const images = [
     { filename: "pic4.jpg", alt: "Wall from pharaoh's tomb" },
     { filename: "pic5.jpg", alt: "Moth on a leaf" },
 ];
+
+// constant with the baseURL
+const baseUrl = "https://mdn.github.io/shared-assets/images/examples/learn/gallery/";
+
+// for loop through images
+for (const image of images) {
+    // new element
+    const newImage = document.createElement("img");
+    // set source and alt text
+    newImage.src = `${baseUrl}${image.filename}`;
+    newImage.alt = image.alt;
+    // focusable via the keyword
+    newImage.tabIndex = "0";
+    // Append image of thumbBar
+    thumbBar.appendChild(newImage);
+    // Show image at full size when thumb clicked
+    newImage.addEventListener("click", updateDisplayedImage);
+    // Show image at full size when enter key is pressed
+    newImage.addEventListener("keydown", (enter) => {
+        if (enter.code === "Enter") {
+            updateDisplayedImage(enter);
+        }
+    });
+}
+
+// updateDisplayedImage function
+function updateDisplayedImage(enter) {
+    displayedImage.src = enter.target.src;
+    displayedImage.alt = enter.target.alt;
+}
