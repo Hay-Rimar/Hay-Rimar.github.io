@@ -1,5 +1,8 @@
 // setup canvas
 
+const para = document.querySelector('p');
+let count = 0;
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -51,7 +54,7 @@ class Ball extends Shape {
             this.velX = -this.velX;
         }
 
-        if (this.x - this.size >= width) {
+        if (this.x - this.size <= 0) {
             this.velX = -this.velX;
         }
 
@@ -69,7 +72,7 @@ class Ball extends Shape {
 
     collisionDetect() {
         for (const ball of balls) {
-            if (!(this !== ball) && ball.exists) {
+            if (this !== ball && ball.exists) {
                 const dx = this.x - ball.x;
                 const dy = this.y - ball.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
